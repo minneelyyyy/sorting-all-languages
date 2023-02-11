@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
 
 	for (int i = 1; i < argc; i++) {
 		if (!is_number(argv[i])) {
-			fprintf(stderr, "error: %s is not a valid number\n", argv[i]);
+			fprintf(stderr, "error: '%s' is not a valid number\n", argv[i]);
 			return 1;
 		}
 
