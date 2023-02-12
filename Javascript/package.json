@@ -1,0 +1,11 @@
+{
+  "name": "sorting",
+  "version": "1.0.0",
+  "description": "A program that sorts numeric command line arguments",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js 9 5 8 6 4 2 3 7 1"
+  },
+  "author": "April Kahny",
+  "license": "Unlicense"
+}
