@@ -6,10 +6,18 @@ The current language list is:
 - C
 - Javascript
 
-# Rules
-The rules are as follows:
-- the program can take an infinite number of integer arguments separated by spaces `sorting 3 9 4 8 5 3`
-- the user should not have to pass the number of arguments as an argument
-- the program should print the numbers in sorted order separated by newlines
-- if the user passes an argument that isn't an integer, the error should print `error: '{arg}' is not a valid number` to stderr and exit with `1`. Any other errors do not need to match anything specific.
-- the program only needs to support 32-bit signed integers if the language needs size to be specified. Behavior when an argument is larger than a 32-bit signed integer can possibly store is undefined.
+# Expected Program Behavior
+The behavior of each of these programs is as follows:
+- The program must take a list of integers from the command line as program arguments. `sorting [integer]...`
+- The program should print its arguments sorted from smallest to largest separated by newlines.
+- If the user passes an argument that isn't an integer, the error should read as `error: '{arg}' is not a valid number` and be printed to stderr.
+- If an error occurs, the program should exit with status 1.
+- If no error occurs, the program should exit with status 0.
+- If no arguments are supplied, the program should print nothing.
+- Behavior when any of the arguments passed is an integer greater than `2147483647` or less than `-2147483648` is **undefined**.
+- Behavior when any other error occurs (such as OOM) is **undefined**.
+
+# Guidelines
+- The program must follow everything outlined in **Expected Program Behavior**.
+- Programs are not expected to support any specific operating system or architecture.
+- You should have a convenient build system or a script to run the program. Just try to make the project structure match what someone would expect from a typical codebase written in that language.
