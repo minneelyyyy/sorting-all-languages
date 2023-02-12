@@ -4,6 +4,7 @@ This is a collection of the same program written in multiple languages.
 The current language list is:
 - Rust
 - C
+- Javascript
 
 # Rules
 The rules are as follows:
