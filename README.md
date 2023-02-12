@@ -12,3 +12,4 @@ The rules are as follows:
 - the user should not have to pass the number of arguments as an argument
 - the program should print the numbers in sorted order separated by newlines
 - if the user passes an argument that isn't an integer, the error should print `error: '{arg}' is not a valid number` to stderr and exit with `1`. Any other errors do not need to match anything specific.
+- the program only needs to support 32-bit signed integers if the language needs size to be specified.
