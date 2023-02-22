@@ -17,5 +17,6 @@ main = do
     case sequence numbers of
         Left s -> do
             putStrLn s
-            exitWith (ExitFailure 1)
-        Right ns -> traverse_ print $ sort ns
+            exitWith $ ExitFailure 1
+        Right ns -> mapM_ print $ sort ns
+
