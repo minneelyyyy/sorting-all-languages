@@ -5,7 +5,7 @@ The current language list is:
 - Rust
 - C
 - Javascript
-- Haskell (unfinished)
+- Haskell
 
 # Expected Program Behavior
 The behavior of each of these programs is as follows:
