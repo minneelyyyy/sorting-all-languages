@@ -10,6 +10,10 @@ int is_number(const char* str) {
 	if (str[0] == '-') {
 		str++;
 	}
+	
+	if (str[0] == '\0') {
+		return 0;
+	}
 
 	for (size_t i = 0; str[i]; i++) {
 		if (!isdigit(str[i])) {

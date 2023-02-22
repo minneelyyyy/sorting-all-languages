@@ -11,7 +11,7 @@ The current language list is:
 The behavior of each of these programs is as follows:
 - The program must take a list of integers from the command line as program arguments. `sorting [integer]...`
 - The program should print its arguments sorted from smallest to largest separated by newlines.
-- If the user passes an argument that isn't an integer, the error should read as `error: '{arg}' is not a valid number` and be printed to stderr.
+- If the user passes an argument that isn't an integer, the error should read as `error: '{arg}' is not a valid number` and be printed to stderr. This should only be printed for the first occurence of an invalid argument.
 - If an error occurs, the program should exit with status 1.
 - If no error occurs, the program should exit with status 0.
 - If no arguments are supplied, the program should print nothing.
