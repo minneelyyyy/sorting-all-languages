@@ -4,6 +4,7 @@ import System.Environment
 import Data.List
 import System.Exit
 import Text.Read (readMaybe)
+import System.IO
 
 convert :: String -> Either String Int
 convert s = case readMaybe s of
@@ -16,7 +17,7 @@ main = do
     let numbers = map convert args
     case sequence numbers of
         Left s -> do
-            putStrLn s
+            hPutStrLn stderr s
             exitWith $ ExitFailure 1
         Right ns -> mapM_ print $ sort ns
 
