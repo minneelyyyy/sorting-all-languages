@@ -3,15 +3,19 @@ module Main where
 import System.Environment
 import Data.List
 import System.Exit
-import Text.Read
+import Text.Read (readMaybe)
 
--- TODO: make this handle parse error
-convert :: String -> Integer
-convert = read
+convert :: String -> Either String Int
+convert s = case readMaybe s of
+    Just n -> Right n
+    Nothing -> Left $ "error: '" ++ s ++ "' is not a valid number"
 
 main :: IO ()
 main = do
     args <- getArgs
-    numbers <- map convert args
-    sequence_ (map print (sort numbers))
-
+    let numbers = map convert args
+    case sequence numbers of
+        Left s -> do
+            putStrLn s
+            exitWith (ExitFailure 1)
+        Right ns -> traverse_ print $ sort ns
